@@ -1,0 +1,101 @@
+<!-- Create event:- -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="total.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Create Event</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <span class="Header">
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="/Aindex.html"><h2>Get together</h2></a>
+        <form
+          style="display: flex; margin-top: 20px"
+          method="post"
+          action="/search"
+        >
+          <input style="width: 100%" />
+          <input type="submit" value="Search" />
+        </form>
+        <a href="/"
+          ><img
+            style="width: 50px; height: 50px; margin-top: 10px"
+            src="user.svg"
+        /></a>
+      </span>
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="#motiv"><p>Motivational speaker</p></a>
+        <a href="#plays"><p>Playback singer</p></a>
+        <a href="#modl"><p>Model</p></a>
+        <a href="/TraH.html"><p>Transaction list</p></a>
+        <a href="/CreateE.html"><p>Create Event</p></a>
+        <a href="#Footer"><p>Contact US</p></a>
+        <a href="#Footer"><p>About US</p></a>
+        <a href="/"><p>Log out</p></a>
+      </span>
+    </span>
+    <br />
+    <div>
+      <center>
+        <h2 style="color: red">All fields are required !</h2>
+        <form method="post" action="addevent">
+          Event Number:<br /><br />
+          <input id="text" type="text" name="eventno" /><br /><br />
+          Event Name:<br /><br />
+          <input id="text" type="text" name="eventname" /><br /><br />
+          Coordinator Name:<br /><br />
+          <input id="text" type="text" name="coordinatorname" /><br /><br />
+          Coordinator Number:<br /><br />
+          <input id="text" type="text" name="coordinatorno" /><br /><br />
+          Fee for registration:<br /><br />
+          <input id="text" type="text" name="fee" /><br /><br />
+          <p></p>
+          Venue of event:<br /><br />
+          <input id="text" type="text" name="venue" /><br /><br />
+          <p></p>
+          Date of event:<br /><br />
+          <input id="text" type="text" name="date" /><br /><br />
+          Type of event:<br /><br />
+          <select style="color: black" id="text" name="type">
+            <option value="">--Please select some thing--</option>
+            <option value="modl">Model</option>
+            <option value="plas">Playback singer</option>
+            <option value="mots">Motivational Speaker</option>
+          </select>
+          <br /><br />
+          <p></p>
+          <input type="submit" id="sub" value="Submit" />
+        </form>
+      </center>
+    </div>
+    <span id="Footer" class="Footer">
+      <span style="display: flex; justify-content: space-around">
+        <form class="complainForm" method="post" action="/complaint">
+          <h3>Complaint form</h3>
+          <input style="margin-bottom: 10px" type="text" />
+          <input type="submit" style="margin: 0px" />
+        </form>
+        <form>
+          <h3>About US</h3>
+          <h3>
+            Day by day human make themself like a<br />robot their life is
+            getting boring we<br />want to give entertainment for a few moment.
+          </h3>
+        </form>
+        <form>
+          <h3>Contact US</h3>
+          <h3>
+            Head office<br />Get together<br />Mirpur,Dhaka<br />01792942755
+          </h3>
+        </form>
+      </span>
+    </span>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!-- Login Page -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="total.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <span class="Header">
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="/Aindex.html"><h2>Get together</h2></a>
+        <form
+          style="display: flex; margin-top: 20px"
+          method="post"
+          action="/search"
+        >
+          <input style="width: 100%" />
+          <input type="submit" value="Search" />
+        </form>
+        <a href="/"
+          ><img
+            style="width: 50px; height: 50px; margin-top: 10px"
+            src="user.svg"
+        /></a>
+      </span>
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="#motiv"><p>Motivational speaker</p></a>
+        <a href="#plays"><p>Playback singer</p></a>
+        <a href="#modl"><p>Model</p></a>
+        <a href="/TraH.html"><p>Transaction list</p></a>
+        <a href="/CreateE.html"><p>Create Event</p></a>
+        <a href="#Footer"><p>Contact US</p></a>
+        <a href="#Footer"><p>About US</p></a>
+        <a href="/"><p>Log out</p></a>
+      </span>
+    </span>
+
+    <h1 id="motiv">Motivational Speaker</h1>
+    <section class="grid-container" id="motivational"></section>
+    <h1 id="plays">Playback Singer</h1>
+    <section class="grid-container" id="playback"></section>
+    <h1 id="modl">Model</h1>
+    <section class="grid-container" id="modell"></section>
+
+    <span id="Footer" class="Footer">
+      <span style="display: flex; justify-content: space-around">
+        <form class="complainForm" method="post" action="/complaint">
+          <h3>Complaint form</h3>
+          <input style="margin-bottom: 10px" type="text" />
+          <input type="submit" style="margin: 0px" />
+        </form>
+        <form>
+          <h3>About US</h3>
+          <h3>
+            Day by day human make themself like a<br />robot their life is
+            getting boring we<br />want to give entertainment for a few moment.
+          </h3>
+        </form>
+        <form>
+          <h3>Contact US</h3>
+          <h3>
+            Head office<br />Get together<br />Mirpur,Dhaka<br />01792942755
+          </h3>
+        </form>
+      </span>
+    </span>
+  </body>
+  <script>
+    function listLoader(rootag, data_url) {
+      const root = document.getElementById(rootag);
+      fetch(data_url)
+        .then((d) => {
+          return d.json();
+        })
+        .then((d) => {
+          for (let data in d) {
+            const Div = document.createElement("section");
+
+            Div.setAttribute("class", "grid-item listItem");
+            Div.style.background = "#0a0a0a";
+
+            const Title = document.createElement("h2");
+            Title.textContent = d[data].eventname;
+            const EvNo = document.createElement("h2");
+            EvNo.textContent = "Event No: " + d[data].eventno;
+            const Price = document.createElement("h2");
+            Price.textContent = "৳" + d[data].fee;
+
+            const Venue = document.createElement("h3");
+            Venue.textContent = "Venue: " + d[data].venue;
+            const Date = document.createElement("h3");
+            Date.textContent = "Date: " + d[data].date;
+            const CName = document.createElement("h3");
+            CName.textContent = "Co-Ordinator Name: " + d[data].coordinatorname;
+            const CNum = document.createElement("h3");
+            CNum.textContent = "Co-Ordinator Number: " + d[data].coordinatorno;
+
+            const Span = document.createElement("span");
+            Span.setAttribute("class", "horiVP");
+            const Span2 = document.createElement("span");
+            Span2.setAttribute("class", "horiVP");
+
+            Span.append(Venue);
+            Span.append(Date);
+            Span2.append(CName);
+            Span2.append(CNum);
+
+            const Button = document.createElement("a");
+            const ButtonFace = document.createElement("button");
+            ButtonFace.innerText = "Delete";
+            Button.append(ButtonFace);
+            Button.setAttribute("href", "/delete?eventno=" + d[data].eventno);
+            Button.style.marginBottom = "20px";
+
+            Div.append(Title);
+            Div.append(EvNo);
+            Div.append(Price);
+            Div.append(Span);
+            Div.append(Span2);
+            Div.append(Button);
+
+            root.append(Div);
+          }
+        });
+    }
+
+    const motivRoot = {
+      rootTag: "motivational",
+      rootUrl: "/loadlist?type=motiv",
+    };
+    const playbRoot = { rootTag: "playback", rootUrl: "/loadlist?type=play" };
+    const modelRoot = { rootTag: "modell", rootUrl: "/loadlist?type=model" };
+
+    listLoader(motivRoot.rootTag, motivRoot.rootUrl);
+    listLoader(playbRoot.rootTag, playbRoot.rootUrl);
+    listLoader(modelRoot.rootTag, modelRoot.rootUrl);
+  </script>
+</html>

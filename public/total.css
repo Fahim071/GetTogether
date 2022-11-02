@@ -1,0 +1,178 @@
+.Header {
+  display: block;
+  position: static;
+  margin: 0px;
+  height: fit-content;
+  width: 100%;
+  background-color: #0a0a0a;
+}
+
+.galaryRoot {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  background-color: orangered !important;
+  background-image: url("https://images.nationalgeographic.org/image/upload/v1638882947/EducationHub/photos/tourists-at-victoria-falls.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none !important;
+  border-radius: 0% !important;
+  box-shadow: none !important;
+  height: 85vh;
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.complainForm {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Footer {
+  display: block;
+  position: static;
+  height: fit-content;
+  width: 100%;
+  background-color: #005eff;
+  /* background-color: #0a0a0a; */
+  bottom: 0;
+  left: 0;
+  margin-top: 20px;
+}
+
+* {
+  border-width: 0;
+  font-style: normal;
+  color: white;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+html {
+  background-image: url("https://wintertime.com.my/wp-content/uploads/2019/07/event-production-company-p2-entertainment-group-1.jpg");
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-image: url("https://cdn.wallpapersafari.com/75/49/lg7sK4.png");
+  box-shadow: 0 0 40px #5ee4ff;
+  background-color: black;
+  border: 1px solid;
+  width: 50%;
+  margin-left: 22%;
+  margin-right: 25%;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+#common {
+  box-shadow: 0 0 40px #5ee4ff;
+  background-color: black;
+  border: 1px solid;
+  width: 50%;
+  margin-left: 22%;
+  margin-right: 25%;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+button {
+  padding: 15px;
+  font-weight: bold;
+  font-size: 100%;
+  width: 170px;
+  text-align: center;
+  padding-top: 10px;
+  color: black;
+  background-color: #5ee4ff;
+  height: 40px;
+  align-self: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #5ee4ff;
+}
+
+button:hover {
+  background: #5ee4ff;
+  color: black;
+  box-shadow: 0 0 40px #5ee4ff;
+}
+
+div {
+  background-image: url("https://cdn.wallpapersafari.com/75/49/lg7sK4.png");
+  background-color: black;
+  box-shadow: 0 0 40px #5ee4ff;
+  width: 50%;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 5px solid;
+  border-radius: 50px;
+  padding: 50px;
+}
+
+input {
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  color: black;
+  font-size: 15px;
+}
+#sub {
+  padding: 15px;
+  font-weight: bold;
+  font-size: 100%;
+  width: 170px;
+  text-align: center;
+  padding-top: 10px;
+  color: black;
+  background-color: #5ee4ff;
+  height: 40px;
+  align-self: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #5ee4ff;
+}
+
+.horiVP {
+  /* display: inline-block; */
+  justify-content: space-around;
+  align-items: center;
+}
+
+.listItem {
+  background: crimson !important;
+  padding: 0px;
+  margin: 10px;
+  text-align: center;
+  width: auto;
+}
+
+#sub:hover {
+  background: #5ee4ff;
+  color: black;
+  box-shadow: 0 0 40px #5ee4ff;
+}

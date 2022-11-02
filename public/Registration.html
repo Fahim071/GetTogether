@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="total.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>View Events</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <span class="Header">
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="/indexlog.html"><h2>Get together</h2></a>
+        <form
+          style="display: flex; margin-top: 20px"
+          method="post"
+          action="/search"
+        >
+          <input style="width: 100%" />
+          <input type="submit" value="Search" />
+        </form>
+        <a href="/"
+          ><img
+            style="width: 50px; height: 50px; margin-top: 10px"
+            src="user.svg"
+        /></a>
+      </span>
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="#motiv"><p>Motivational speaker</p></a>
+        <a href="#plays"><p>Playback singer</p></a>
+        <a href="#modl"><p>Model</p></a>
+        <a href="#Footer"><p>Contact US</p></a>
+        <a href="#Footer"><p>About US</p></a>
+        <a href="/"><p>Log out</p></a>
+      </span>
+    </span>
+    <br />
+    <div>
+      <center>
+        <form method="post" action="eventregistration">
+          Enter Event Name:<br /><br />
+          <input type="text" id="text" name="ename" /><br />
+          <p></p>
+          Enter Event No:<br /><br />
+          <input type="number" id="text" name="evnum" /><br />
+          <p></p>
+          Send money - যেকোন একটি নাম্বারে টাকা পাঠিয়ে Transaction id copy করে
+          নিন<br /><br />
+          bKash > 01521217545<br /><br />
+          Nagad > 01742942755<br /><br />
+          Rocket > 01408085909<br /><br />
+          আপনার নিজের টাকা পাঠানো বিকাশ অথবা নগদ অথবা রকেট নাম্বার দিন:<br /><br />
+          <input type="number" id="text" name="mnum" /><br />
+          <p></p>
+          Enter Transaction ID:<br /><br />
+          <input type="text" id="text" name="cardno" /><br />
+          <p></p>
+          Enter Member Name:<br /><br />
+          <input type="text" id="text" name="cname" /><br />
+          <p></p>
+          Enter Event Date:<br /><br />
+          <input type="date" id="text" name="edate" /><br />
+          <p></p>
+          <input type="submit" id="sub" value="Proceed" />
+        </form>
+      </center>
+    </div>
+    <span id="Footer" class="Footer">
+      <span style="display: flex; justify-content: space-around">
+        <form class="complainForm" method="post" action="/complaint">
+          <h3>Complaint form</h3>
+          <input style="margin-bottom: 10px" type="text" />
+          <input type="submit" style="margin: 0px" />
+        </form>
+        <form>
+          <h3>About US</h3>
+          <h3>
+            Day by day human make themself like a<br />robot their life is
+            getting boring we<br />want to give entertainment for a few moment.
+          </h3>
+        </form>
+        <form>
+          <h3>Contact US</h3>
+          <h3>
+            Head office<br />Get together<br />Mirpur,Dhaka<br />01792942755
+          </h3>
+        </form>
+      </span>
+    </span>
+  </body>
+  <script>
+    let params = new URLSearchParams(location.search);
+    const eventname = params.get("eventname");
+    const eventno = params.get("eventno");
+    const date = params.get("date");
+    const eventnameTag = document.getElementsByName("ename")[0];
+    const eventnoTag = document.getElementsByName("evnum")[0];
+    const dateTag = document.getElementsByName("edate")[0];
+
+    eventnameTag.value = eventname;
+    eventnoTag.value = eventno;
+    dateTag.value = date;
+  </script>
+</html>

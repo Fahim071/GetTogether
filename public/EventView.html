@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <br />
+  <head>
+    <link rel="stylesheet" href="../total.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Event list</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <h2 style="text-align: center" id="common">List of Events</h2>
+    <br />
+    <p></p>
+    <p></p>
+  </head>
+  <body>
+    <div>
+      <center id="rootPage"></center>
+    </div>
+  </body>
+  <script>
+    const root = document.getElementById("rootPage");
+    fetch("/loadlist")
+      .then((d) => {
+        return d.json();
+      })
+      .then((d) => {
+        for (let data in d) {
+          const Div = document.createElement("div");
+          Div.setAttribute("class", "listItem");
+
+          const Center = document.createElement("center");
+          const LF = document.createElement("br");
+
+          const Title = document.createElement("h2");
+          Title.textContent = d[data].eventname;
+          const EvNo = document.createElement("h2");
+          EvNo.textContent = "Event No: " + d[data].eventno;
+          const Price = document.createElement("h2");
+          Price.textContent = "৳" + d[data].fee;
+
+          const Venue = document.createElement("h3");
+          Venue.textContent = "Venue: " + d[data].venue;
+          const Date = document.createElement("h3");
+          Date.textContent = "Date: " + d[data].date;
+          const CName = document.createElement("h3");
+          CName.textContent = "Co-Ordinator Name: " + d[data].coordinatorname;
+          const CNum = document.createElement("h3");
+          CNum.textContent = "Co-Ordinator Number: " + d[data].coordinatorno;
+
+          const Span = document.createElement("span");
+          Span.setAttribute("class", "horiVP");
+          const Span2 = document.createElement("span");
+          Span2.setAttribute("class", "horiVP");
+
+          Span.append(Venue);
+          Span.append(Date);
+          Span2.append(CName);
+          Span2.append(CNum);
+
+          Center.append(Title);
+          Center.append(EvNo);
+          Center.append(Price);
+          Center.append(Span);
+          Center.append(LF);
+          Center.append(Span2);
+
+          Div.append(Center);
+          root.append(Div);
+          root.append(LF);
+          root.append(LF);
+        }
+      });
+  </script>
+</html>

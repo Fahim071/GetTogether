@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5df3c3ca.css",
+    "main.js": "/static/js/main.f95c3069.js",
+    "static/media/waterfall.jpg": "/static/media/waterfall.15fadc14c479bbe407b1.jpg",
+    "index.html": "/index.html",
+    "main.5df3c3ca.css.map": "/static/css/main.5df3c3ca.css.map",
+    "main.f95c3069.js.map": "/static/js/main.f95c3069.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5df3c3ca.css",
+    "static/js/main.f95c3069.js"
+  ]
+}

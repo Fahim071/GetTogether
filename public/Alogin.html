@@ -1,0 +1,90 @@
+<!-- ADMIN LOGIN- -->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="total.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <span class="Header">
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="/"><h2>Get together</h2></a>
+        <form
+          style="display: flex; margin-top: 20px"
+          method="post"
+          action="/search"
+        >
+          <input style="width: 100%" />
+          <input type="submit" value="Search" />
+        </form>
+      </span>
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="#motiv"><p>Motivational speaker</p></a>
+        <a href="#plays"><p>Playback singer</p></a>
+        <a href="#modl"><p>Model</p></a>
+        <a href="#Footer"><p>Contact US</p></a>
+        <a href="#Footer"><p>About US</p></a>
+      </span>
+    </span>
+    <br />
+    <br />
+
+    <div>
+      <center><h2 id="common">Admin Login Page</h2></center>
+      <br /><br />
+
+      <center>
+        <form method="post" action="loginadmin">
+          Username:<br /><br />
+          <input
+            type="text"
+            id="text"
+            name="email"
+            placeholder="Username"
+          /><br />
+          <p>
+            Password:<br /><br />
+            <input
+              type="password"
+              id="text"
+              name="pass"
+              placeholder="Password"
+            /><br /><br />
+            <p>
+              <input type="submit" id="sub" value="Submit" />
+            </p>
+          </p>
+        </form>
+      </center>
+    </div>
+    <span id="Footer" style="position:fixed;" class="Footer">
+      <span style="display: flex; justify-content: space-around">
+        <form class="complainForm" method="post" action="/complaint">
+          <h3>Complaint form</h3>
+          <input style="margin-bottom: 10px" type="text" />
+          <input type="submit" style="margin: 0px" />
+        </form>
+        <form>
+          <h3>About US</h3>
+          <h3>
+            Day by day human make themself like a<br />robot their life is
+            getting boring we<br />want to give entertainment for a few moment.
+          </h3>
+        </form>
+        <form>
+          <h3>Contact US</h3>
+          <h3>
+            Head office<br />Get together<br />Mirpur,Dhaka<br />01792942755
+          </h3>
+        </form>
+      </span>
+    </span>
+  </body>
+</html>

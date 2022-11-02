@@ -1,0 +1,141 @@
+<!-- Participant sign up:- -->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="total.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Participant Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <span class="Header">
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="/"><h2>Get together</h2></a>
+        <form
+          style="display: flex; margin-top: 20px"
+          method="post"
+          action="/search"
+        >
+          <input style="width: 100%" />
+          <input type="submit" value="Search" />
+        </form>
+      </span>
+      <span style="display: flex; justify-content: space-evenly">
+        <a href="#motiv"><p>Motivational speaker</p></a>
+        <a href="#plays"><p>Playback singer</p></a>
+        <a href="#modl"><p>Model</p></a>
+        <a href="#Footer"><p>Contact US</p></a>
+        <a href="#Footer"><p>About US</p></a>
+      </span>
+    </span>
+    <br />
+    <div>
+      <center><h3>Participant SignUP Page</h3></center>
+      <center>
+        <form method="post" action="/submitsignup">
+          Name:<br /><br />
+          <input id="name" type="text" name="name" /><br />
+          <p></p>
+          Username:<br /><br />
+          <input id="username" type="text" name="username" /><br />
+          <p></p>
+          Email:<br /><br />
+          <input id="email" type="text" name="email" /><br />
+          <p id="emailError" style="color: red"></p>
+          Password:<br /><br />
+          <input id="pass" type="password" name="pass" /><br /><br />
+          <p id="passError" style="color: red"></p>
+          <p id="passError2" style="color: red"></p>
+          <p id="passError3" style="color: red"></p>
+          Confirm Password:<br /><br />
+          <input id="cpass" type="password" name="cpass" /><br /><br />
+          <br /><br />
+          <br /><br />
+          <input type="submit" id="sub" value="Submit" />
+        </form>
+      </center>
+    </div>
+    <span id="Footer" class="Footer">
+      <span style="display: flex; justify-content: space-around">
+        <form class="complainForm" method="post" action="/complaint">
+          <h3>Complaint form</h3>
+          <input style="margin-bottom: 10px" type="text" />
+          <input type="submit" style="margin: 0px" />
+        </form>
+        <form>
+          <h3>About US</h3>
+          <h3>
+            Day by day human make themself like a<br />robot their life is
+            getting boring we<br />want to give entertainment for a few moment.
+          </h3>
+        </form>
+        <form>
+          <h3>Contact US</h3>
+          <h3>
+            Head office<br />Get together<br />Mirpur,Dhaka<br />01792942755
+          </h3>
+        </form>
+      </span>
+    </span>
+  </body>
+  <script>
+    let email = document.getElementById("email");
+    let button = document.getElementById("sub");
+    let pass = document.getElementById("pass");
+    let cpass = document.getElementById("cpass");
+    let error = document.getElementById("emailError");
+    let error2 = document.getElementById("passError");
+    let error3 = document.getElementById("passError2");
+    let error4 = document.getElementById("passError3");
+    let validRegex =
+      /^(([^<>()[\]\\.,;:\s@$"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let validPassRegex =
+      /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,1600}$/;
+
+    email.addEventListener("keyup", (e) => {
+      if (email.value.match(validRegex) || email.value === "") {
+        email.value = email.value.toLowerCase();
+        error.textContent = "";
+        button.removeAttribute("disabled", "true");
+      } else {
+        error.textContent = "Please give a valid email address";
+        button.setAttribute("disabled", "true");
+      }
+    });
+
+    pass.addEventListener("keyup", (e) => {
+      if (pass.value.length < 7 || !pass.value.match(validPassRegex)) {
+        error2.textContent =
+          "Password must be 7 or more alphanumeric characters and any symbols";
+        button.setAttribute("disabled", "true");
+      } else {
+        error2.textContent = "";
+        button.removeAttribute("disabled", "true");
+      }
+
+      if (pass.value !== cpass.value) {
+        error3.textContent = "Password didn't match !";
+        button.setAttribute("disabled", "true");
+      } else {
+        error3.textContent = "";
+        button.removeAttribute("disabled", "true");
+      }
+    });
+
+    cpass.addEventListener("keyup", (e) => {
+      if (pass.value !== cpass.value) {
+        error3.textContent = "Password didn't match !";
+        button.setAttribute("disabled", "true");
+      } else {
+        error3.textContent = "";
+        button.removeAttribute("disabled", "true");
+      }
+    });
+  </script>
+</html>
